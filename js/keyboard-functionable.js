@@ -86,3 +86,11 @@ function load(){
         console.log(this)
     });
 }
+function checkWindowSize() {
+    if (window.innerWidth < 601) {
+        textarea.setAttribute('disabled', 'true');
+    }
+}
+checkWindowSize();
+
+window.addEventListener('resize', checkWindowSize);
