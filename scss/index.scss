@@ -1,0 +1,217 @@
+$white-color: #EFE9F4;
+$black-color: #080F0F;
+$gray-color: #959595;
+$red-color: #b92a27;
+$font-family: Verdana, sans-serif;
+$title-font: 25px;
+$key-font: 15px;
+$size-icon: 30px;
+
+@mixin flexCenter($a){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: $a;
+}
+@mixin height-width($a, $b){
+    min-width: $b; max-width: $b;
+    min-height: $a; max-height: $a;
+}
+// @mixin key-size($a){
+//     width: $a; 
+//     height: 10%;
+//     border-radius: 10px;
+// }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: $font-family;
+    background-color: $white-color;
+    width: 100%;
+    height: 100vh;
+    color: $black-color;
+    @include flexCenter(column);
+}
+header{
+    width: 100%;
+    height: 10vh;
+    @include flexCenter(column);
+    h1{
+        font-size: $title-font;
+        opacity: 0.3;
+        color: transparent;
+        background: $black-color;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        text-shadow: 0px 3px 3px #ffffff7d;
+    }
+    p{
+        opacity: 0.5;
+        color: $red-color;
+    }
+}
+
+main{
+    width: 100%;
+    max-width: 1920px;
+    height: 80vh;
+    @include flexCenter(column);
+    .main{
+        padding: 30px;
+        width: 55%;
+        height: 100%;
+        border-radius: 15px;
+        box-shadow: inset 10px 5px 13px rgb(244, 244, 244), 5px 3px 13px $gray-color;
+        textarea{
+            @include height-width(40%, 100%);
+            position: relative;
+            border: none;
+            border-radius: 15px;
+            background-color: $white-color;
+            border-left: 2px solid rgb(175, 175, 175);
+            border-top: 2px solid rgb(175, 175, 175);
+            border-right: 2px solid white;
+            border-bottom: 2px solid white;
+            padding: 10px;
+            background-image: linear-gradient(to right, $white-color 0, $white-color 0, #00000025 100%);
+            resize: none;
+            &:focus{
+                outline: none;
+            }
+        }
+        .keyboard{
+            @include height-width(60%, 100%);
+            @include flexCenter(column);
+            // border: 1px solid red;
+            .keysFila{
+                min-width: 100%;
+                height: auto;
+                @include flexCenter(row);
+                // border: 1px solid green
+            }
+            .keys{
+                @include flexCenter(column);
+                margin: 1.3%;
+                margin-top: 0;
+                width: 3vw;
+                height: 3vw;
+                border-radius: 10px;
+                font-weight: 600;
+                cursor: pointer;
+                border: none;
+                box-shadow: inset 2px 5px 10px rgb(244, 244, 244), 2px 1px 10px $gray-color;
+                transition: all .3s ease-in-out;
+                &:hover{
+                    box-shadow: inset 2px 5px 10px rgb(244, 244, 244), 2px 1px 10px #b9292792;
+                    color: $red-color;
+                }
+            }
+            #key-caps, #key-back{
+                width: 5vw;
+                svg{
+                    height: $size-icon;
+                    fill: $black-color;
+                    transition: all .3s ease-in-out;
+                }
+                &:hover svg{
+                    fill: $red-color;
+                }
+            }
+            .keys-on{
+                box-shadow: inset 2px 5px 10px rgb(244, 244, 244), 2px 1px 10px #b9292792;
+                color: $red-color;
+            }
+            #key-space{
+                width: 30vw;
+            }
+        }
+    }
+}
+
+footer{
+    width: 100%;
+    height: 10vh;
+    @include flexCenter(column);
+    p{
+        opacity: 0.5;
+        a{
+            color: $gray-color;
+            transition: .2s ease-in-out;
+            &:hover{
+                color: $red-color;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    header{
+        h1{
+            font-size: 100%;
+        }
+    }
+    main{
+        .main{
+            padding: 10px;
+            width: 95%;
+            .keyboard{
+                .keys{
+                    width: 7vw;
+                    height: 8vh;
+                    &:hover{
+                        box-shadow: inset 2px 5px 10px rgb(244, 244, 244), 2px 1px 10px $gray-color;
+                        color: $black-color;
+                    }
+                }
+                #key-caps{
+                    width: 10vw;
+                    &::after{
+                        content: "▲";
+                        text-shadow: 0px 0px 0 $black-color, 0px 0px 0 $black-color;
+                        font-size: 15px;
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    p{
+                        display: none;
+                    }
+                }
+                #key-back{
+                    width: 10vw;
+                    &::after{
+                        content: "⌫";
+                        text-shadow: 0px 0px 0 $black-color, 0px 0px 0 $black-color;
+                        font-size: 15px;
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    p{
+                        display: none;
+                    }
+                }
+                #key-space{
+                    width: 60vw;
+                }
+            }
+        }
+    }
+
+    footer{
+        font-size: 80%;
+    }
+}
+.keys-on{
+    box-shadow: inset 2px 5px 10px rgb(244, 244, 244), 2px 1px 10px #b9292792;
+    color: $red-color;
+}

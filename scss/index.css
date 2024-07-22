@@ -1,1 +1,213 @@
-/*# sourceMappingURL=index.css.map */
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, sans-serif;
+  background-color: #EFE9F4;
+  width: 100%;
+  height: 100vh;
+  color: #080F0F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+header {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+header h1 {
+  font-size: 25px;
+  opacity: 0.3;
+  color: transparent;
+  background: #080F0F;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  text-shadow: 0px 3px 3px rgba(255, 255, 255, 0.4901960784);
+}
+header p {
+  opacity: 0.5;
+  color: #b92a27;
+}
+
+main {
+  width: 100%;
+  max-width: 1920px;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+main .main {
+  padding: 30px;
+  width: 55%;
+  height: 100%;
+  border-radius: 15px;
+  box-shadow: inset 10px 5px 13px rgb(244, 244, 244), 5px 3px 13px #959595;
+}
+main .main textarea {
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 40%;
+  max-height: 40%;
+  position: relative;
+  border: none;
+  border-radius: 15px;
+  background-color: #EFE9F4;
+  border-left: 2px solid rgb(175, 175, 175);
+  border-top: 2px solid rgb(175, 175, 175);
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  padding: 10px;
+  background-image: linear-gradient(to right, #EFE9F4 0, #EFE9F4 0, rgba(0, 0, 0, 0.1450980392) 100%);
+  resize: none;
+}
+main .main textarea:focus {
+  outline: none;
+}
+main .main .keyboard {
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 60%;
+  max-height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+main .main .keyboard .keysFila {
+  min-width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+main .main .keyboard .keys {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 1.3%;
+  margin-top: 0;
+  width: 3vw;
+  height: 3vw;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  box-shadow: inset 2px 5px 10px rgb(244, 244, 244), 2px 1px 10px #959595;
+  transition: all 0.3s ease-in-out;
+}
+main .main .keyboard .keys:hover {
+  box-shadow: inset 2px 5px 10px rgb(244, 244, 244), 2px 1px 10px rgba(185, 41, 39, 0.5725490196);
+  color: #b92a27;
+}
+main .main .keyboard #key-caps, main .main .keyboard #key-back {
+  width: 5vw;
+}
+main .main .keyboard #key-caps svg, main .main .keyboard #key-back svg {
+  height: 30px;
+  fill: #080F0F;
+  transition: all 0.3s ease-in-out;
+}
+main .main .keyboard #key-caps:hover svg, main .main .keyboard #key-back:hover svg {
+  fill: #b92a27;
+}
+main .main .keyboard .keys-on {
+  box-shadow: inset 2px 5px 10px rgb(244, 244, 244), 2px 1px 10px rgba(185, 41, 39, 0.5725490196);
+  color: #b92a27;
+}
+main .main .keyboard #key-space {
+  width: 30vw;
+}
+
+footer {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+footer p {
+  opacity: 0.5;
+}
+footer p a {
+  color: #959595;
+  transition: 0.2s ease-in-out;
+}
+footer p a:hover {
+  color: #b92a27;
+}
+
+@media screen and (max-width: 600px) {
+  header h1 {
+    font-size: 100%;
+  }
+  main .main {
+    padding: 10px;
+    width: 95%;
+  }
+  main .main .keyboard .keys {
+    width: 7vw;
+    height: 8vh;
+  }
+  main .main .keyboard .keys:hover {
+    box-shadow: inset 2px 5px 10px rgb(244, 244, 244), 2px 1px 10px #959595;
+    color: #080F0F;
+  }
+  main .main .keyboard #key-caps {
+    width: 10vw;
+  }
+  main .main .keyboard #key-caps::after {
+    content: "▲";
+    text-shadow: 0px 0px 0 #080F0F, 0px 0px 0 #080F0F;
+    font-size: 15px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  main .main .keyboard #key-caps p {
+    display: none;
+  }
+  main .main .keyboard #key-back {
+    width: 10vw;
+  }
+  main .main .keyboard #key-back::after {
+    content: "⌫";
+    text-shadow: 0px 0px 0 #080F0F, 0px 0px 0 #080F0F;
+    font-size: 15px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  main .main .keyboard #key-back p {
+    display: none;
+  }
+  main .main .keyboard #key-space {
+    width: 60vw;
+  }
+  footer {
+    font-size: 80%;
+  }
+}
+.keys-on {
+  box-shadow: inset 2px 5px 10px rgb(244, 244, 244), 2px 1px 10px rgba(185, 41, 39, 0.5725490196);
+  color: #b92a27;
+}/*# sourceMappingURL=index.css.map */
