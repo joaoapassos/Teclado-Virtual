@@ -152,6 +152,26 @@ footer p a:hover {
   color: #b92a27;
 }
 
+@media screen and (max-width: 1000px) {
+  main .main {
+    position: relative;
+    padding: 10px;
+    width: 80vw;
+  }
+  main .main .keyboard .keys {
+    width: 4.5vw;
+    height: 4.5vw;
+  }
+  main .main .keyboard #key-caps {
+    width: 7vw;
+  }
+  main .main .keyboard #key-back {
+    width: 7vw;
+  }
+  main .main .keyboard #key-space {
+    width: 50vw;
+  }
+}
 @media screen and (max-width: 600px) {
   header h1 {
     font-size: 100%;
@@ -206,8 +226,4 @@ footer p a:hover {
   footer {
     font-size: 80%;
   }
-}
-.keys-on {
-  box-shadow: inset 2px 5px 10px rgb(244, 244, 244), 2px 1px 10px rgba(185, 41, 39, 0.5725490196);
-  color: #b92a27;
 }/*# sourceMappingURL=index.css.map */

@@ -149,6 +149,31 @@ footer{
     }
 }
 
+@media screen and (max-width: 1000px) {
+    main{
+        .main{
+            position: relative;
+            padding: 10px;
+            width: 80vw;
+            .keyboard{
+                .keys{
+                    width: 4.5vw;
+                    height: 4.5vw;
+                }
+                #key-caps{
+                    width: 7vw;
+                }
+                #key-back{
+                    width: 7vw;
+                }
+                #key-space{
+                    width: 50vw;
+                }
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 600px) {
     header{
         h1{
@@ -211,7 +236,4 @@ footer{
         font-size: 80%;
     }
 }
-.keys-on{
-    box-shadow: inset 2px 5px 10px rgb(244, 244, 244), 2px 1px 10px #b9292792;
-    color: $red-color;
-}
+

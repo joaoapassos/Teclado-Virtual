@@ -5,14 +5,10 @@ function keyboardFunctionable (){
     keys.forEach((key)=>{
         key.addEventListener('click', (e)=>{
             var key = e.target;
-            if(key.id !== 'key-caps' && key.id !== 'key-back' && key.id !== 'key-space'){
-                var key = key.innerText
-                textarea.value = `${textarea.value}${key}`;
-            }
-            else if(key.id == 'key-caps'){
+            if(key.id == 'key-caps' || key.id == 'caps-p'){
                 keyCaps();
             }
-            else if(key.id == 'key-back'){
+            else if(key.id == 'key-back' || key.id == 'back-p'){
                 var start = textarea.selectionStart;
                 var end = textarea.selectionEnd;
 
@@ -28,6 +24,14 @@ function keyboardFunctionable (){
             }
             else if(key.id == 'key-space'){
                 textarea.value = `${textarea.value} `;
+            }
+            // if(key.id !== 'key-caps' && key.id !== 'key-back' && key.id !== 'key-space'){
+            //     var key = key.innerText
+            //     textarea.value = `${textarea.value}${key}`;
+            // }
+            else if(key.id !== 'key-caps' && key.id !== 'key-back' && key.id !== 'key-space' && key.id !== 'back-p' && key.id !== 'caps-p'){
+                var key = key.innerText
+                textarea.value = `${textarea.value}${key}`;
             }
             textarea.focus();
             })
