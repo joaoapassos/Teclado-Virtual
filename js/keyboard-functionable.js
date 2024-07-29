@@ -38,7 +38,8 @@ function keyboardFunctionable (){
     })
     document.addEventListener('keydown', (e)=>{
         keys.forEach((key)=>{
-            if(e.key == key.name && e.key !== 'CapsLock'){ 
+            var keyLowerCase = e.key.toLowerCase()
+            if(keyLowerCase == key.name && e.key !== 'CapsLock'){ 
                 textarea.focus();
                 key.classList.add('keys-on')
                 setTimeout(
